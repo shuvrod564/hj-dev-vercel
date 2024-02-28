@@ -1,0 +1,39 @@
+
+.menu__after::after {
+    position: absolute;
+    content: '';
+    height: 12px;
+    width: 12px;
+    border: 1px solid #fb0;  
+    left: 16px;
+    top: -7px;
+    border-right: 0;
+    border-bottom: 0;
+    transform: rotate(45deg);
+    background: #fff;
+}
+.menu__after.right::after {
+    left: auto;right: 16px;
+}
+
+.child__drop .menu::after {
+    position: absolute;
+    content: '';
+    height: 12px;
+    width: 12px;
+    border: 1px solid #fb0;  
+    left: -7px;
+    top: 13px;
+    border-top: 0;
+    border-right: 0;
+    transform: rotate(45deg);
+    background: #fff;
+}
+
+.child__drop:hover .menu {
+    display: block;
+}
+
+.child__drop:hover > a {
+    @apply bg-[#fcd998] text-dark
+}

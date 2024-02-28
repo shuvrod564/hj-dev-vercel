@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+
+html { @apply !overflow-x-hidden; }
+body { @apply text-sm sm:text-base 2xl:text-lg overflow-x-hidden; }
+.container { @apply mx-auto px-4; }
+.container-fluid { @apply px-4 sm:max-w-[calc(100%-60px)] lg:max-w-[calc(100%-100px)] mx-auto }
+a, button { @apply transition-all duration-300 inline-block; }
+p { @apply mb-3 }
+
+.h2 { @apply text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-dark mb-3 lg:mb-4; }
+.h3 { @apply text-2xl md:text-3xl lg:text-3xl 2xl:text-4xl font-bold text-dark mb-3 lg:mb-4; }
+
+
+.row { @apply flex flex-row flex-wrap; }
+.btn-primary { @apply text-base uppercase font-semibold px-5 py-2.5 inline-flex items-center bg-primary text-dark rounded-md hover:bg-dark hover:text-white }
+.btn-dark { @apply text-base uppercase font-semibold px-5 py-2.5 inline-flex items-center bg-dark text-white rounded-md hover:bg-secondary hover:text-white }
+.btn-outline-primary { @apply text-base uppercase font-semibold px-5 py-2.5 inline-flex items-center border border-primary text-primary rounded-md hover:bg-primary hover:text-dark }
+.btn-outline-dark { @apply text-base uppercase font-semibold px-5 py-2.5 inline-flex items-center border border-dark text-dark rounded-md hover:bg-dark hover:text-white }
+
+.card-shadow { box-shadow: 0px 3px 7px 2px rgba(0, 0, 0, 0.08); }
+[class^="ant-dropdown-menu"], a, .ant-breadcrumb, .ant-select, .ant-checkbox-wrapper, .ant-radio-wrapper .ant-radio { @apply font-sans }
+.ant-checkbox-wrapper { @apply text-base }
+input:focus {  -webkit-appearance: none;box-shadow: none;outline: none; }
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.fixed__menu { animation: 1s ease-in-out mymove; }
+@keyframes mymove {
+  from {
+    top:-100%
+  }
+  to {
+    top:0
+  }
+}
+
+.menu-open { @apply !opacity-100 !translate-x-0; }
+.menu-content-open { @apply !opacity-100 !translate-x-0; }
+
+
+.ellipses-3, .ellipses-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+}
+.ellipses-2 { -webkit-line-clamp: 2; }
+
+
+.ant-checkbox .ant-checkbox-inner { width: 18px;height: 18px; }
+.ant-checkbox .ant-checkbox-inner::after { top: 46%;inset-inline-start: 28.5%; }
+.ant-checkbox-checked .ant-checkbox-inner { 
+  @apply bg-dark border-dark;
+}
+
+/* ------------- Slick Dots Styles -------------------- */
+.slick-dots li { margin: 0 3px !important; }
+.slick-dots li button { border: 1px solid #aaa !important;border-radius: 50%; }
+.slick-dots li button::before { content: none !important; }
+.slick-dots li.slick-active button::before { content: '•' !important; }
+.slick-slide { @apply sm:px-2.5; }
+.slick-slider {
+  @apply sm:-mx-2.5;
+}
+ 
+
+
+.promo__slick .slick-next { @apply right-7 w-10 h-10 z-10; }
+.promo__slick .slick-prev { @apply left-7 w-10 h-10 z-10; }
+.promo__slick .slick-next svg { @apply w-10 h-10; }
+.promo__slick .slick-next::before, .promo__slick .slick-prev::before { @apply text-4xl; }
+
+
+
+.legal__wrapper p { @apply mb-4; }
+.legal__wrapper h2, .legal__wrapper h3 { @apply mb-3 mt-8 lg:mt-10; }
+
+.form-control {
+  @apply w-full h-10 border border-[#d9d9d9] rounded-lg px-4 py-2 text-dark text-sm sm:text-[15px] font-normal bg-white;
+}
+textarea.form-control { @apply h-auto }
+
+.ant-select.register__select .ant-select-selector { @apply !border-[#333] text-base }
+
+
+/* ----------Global Blog Detail Tag Styles--------------------- */
+.blog__detail h1 { @apply text-2xl md:text-3xl lg:text-4xl font-bold text-dark mb-3 lg:mb-4 mt-4; }
+.blog__detail h2 { @apply text-xl md:text-2xl lg:text-3xl font-bold text-dark mb-3 lg:mb-4 mt-6 md:mt-8 lg:mt-10; }
+.blog__detail h3 { @apply text-lg md:text-xl lg:text-2xl font-bold text-dark mb-3 lg:mb-4 mt-6 md:mt-8 lg:mt-10; }
+.blog__detail h4 { @apply text-base md:text-lg lg:text-xl font-bold text-dark mb-3 lg:mb-4 mt-6 md:mt-8 lg:mt-10; }
+
+
+
+/* shdow box */
+.shadow-box {
+  border-radius: 8px;border: 1px solid rgba(14, 0, 98, 0.10);background: #FFF;box-shadow: 12px 17px 48px 0px rgba(14, 0, 98, 0.10);
+}
+
+.custom-shadow { box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.10); }
+ 
+
+
+/* table */
+.table th { @apply text-[14px] font-medium text-dark p-3 }
+.table td { @apply text-[15px] font-normal text-muted px-3 py-2.5 border-t border-[#e0e1e2] }
+
+.col { flex: 1 0 0%; }
+
+
+/* Plan detail page slider customization styles */
+.detail_page { @apply md:flex flex-row }
+.detail_page .carousel.carousel-slider { @apply xl:!w-[calc(100%-270px)] md:!w-[calc(100%-170px)] !w-full }
+.detail_page .carousel-slider .slider img { @apply w-full xl:h-[645px] lg:h-[550px] md:h-[480px] object-cover object-center }
+.detail_page .carousel { @apply xl:!w-[270px] md:!w-[170px] }
+.detail_page .carousel .thumbs-wrapper { @apply !m-0 lg:pl-4 }
+.detail_page .carousel .thumbs-wrapper .thumbs { @apply md:!flex-col md:whitespace-normal md:max-h-[645px] md:overflow-y-auto md:overflow-x-hidden md:!transform-none }
+.detail_page .carousel .thumbs-wrapper .thumb { @apply md:!w-full !border !m-0  }
+.detail_page .carousel .thumbs-wrapper .thumb img { @apply !w-full h-auto  }  
+.detail_page .carousel .control-dots { @apply items-center flex justify-center pb-3 }
+.detail_page .carousel .control-dots .dot { @apply w-3 h-3 border border-white bg-white m-1 opacity-100 shadow-none inline-flex justify-center items-center }
+.detail_page .carousel .control-dots .dot.selected { @apply border-primary after:w-1 after:h-1 after:rounded-full after:bg-primary after:block }
+.carousel .control-arrow { @apply lg:hidden }
+
+
+.scroller * { scrollbar-width: thin;scrollbar-color: #ddd #eee; }
+.scroller *::-webkit-scrollbar { width: 12px; } 
+.scroller *::-webkit-scrollbar-track { background: #eee; }
+.scroller *::-webkit-scrollbar-thumb { background-color: #ddd;border-radius: 20px;border: 3px solid #eee; }
+
+.team__thumbnail { clip-path: polygon(50% 0, 50% 0, 100% 25%, 100% 75%, 50% 100%, 50% 100%, 0 75%, 0 25%); }
+
+input[type="checkbox"] { @apply w-5 h-5 border border-border-color rounded-sm bg-white cursor-pointer transition-all duration-300 hover:border-primary; -webkit-appearance:none; }
+input[type="checkbox"]:checked { @apply border-primary bg-primary bg-[url('/images/icons/check-white-icon.svg')] bg-no-repeat bg-center bg-[length:16px_16px]; }
